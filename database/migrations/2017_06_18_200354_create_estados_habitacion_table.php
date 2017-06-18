@@ -15,6 +15,8 @@ class CreateEstadosHabitacionTable extends Migration
     {
         Schema::create('estados_habitacion', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre_estado');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

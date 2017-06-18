@@ -15,6 +15,13 @@ class CreateRegitrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_huesped')->unsigned();
+            $table->foreign('id_huesped')->references('id')->on('huespedes');
+            $table->date('check_in');
+            $table->date('check_out');
+            $table->integer('costo_total');
+            $table->integer('id_habitacion')->unsigned();
+            $table->foreign('id_habitacion')->references('id')->on('habitaciones');
             $table->timestamps();
         });
     }
